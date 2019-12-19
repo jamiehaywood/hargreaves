@@ -3,7 +3,7 @@ import postUserAndDob from "./postUserAndDob";
 import postSecureNumberAndPass from "./postSecureNumberAndPass";
 import getSpecifiedSecureNumbers from "./getSpecifiedSecureNumbers";
 import getAccountsInfo from './getAccountsInfo';
-import request = require("request");
+import * as request from 'request'
 
 export class hl {
     private username: string;
