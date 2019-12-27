@@ -11,9 +11,11 @@ Step 1:
 
 Step 2: ```npm install```
 
-Step 3: ```npm start```
+Step 3: ```npm run build```
 
-Step 4: Open [Postman](https://www.getpostman.com/downloads/), and **`POST`** to `localhost:3000/` including the following in a `x-www-form-urlencoded` body:
+Step 4: ```npm start```
+
+Step 5: Open [Postman](https://www.getpostman.com/downloads/), and **`POST`** to `localhost:3000/` including the following in a `x-www-form-urlencoded` body:
 
 `username`:**`<yourHLusername>`**<br/>
 `password`:**`<yourHLpassword>`**<br/>
