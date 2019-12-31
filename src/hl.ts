@@ -1,7 +1,4 @@
-import getToken from "./getToken";
-import postUserAndDob from "./postUserAndDob";
-import postSecureNumberAndPass from "./postSecureNumberAndPass";
-import getSpecifiedSecureNumbers from "./getSpecifiedSecureNumbers";
+import { postUserAndDob, postSecureNumberAndPass, getSpecifiedSecureNumbers, getToken } from './authentication';
 import getAccountsInfo from './getAccountsInfo';
 import * as request from 'request'
 
