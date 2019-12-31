@@ -28,6 +28,7 @@ export class hl {
     }
 
     private async auth() {
+        this.cookies.setCookie("jsCheck=yes; path=/", ".hl.co.uk");
         await postUserAndDob(this.username, this.hl_vt, this.dateOfBirth, this.cookies)
         await postSecureNumberAndPass(this.password, this.specifiedSecureNumbers, this.hl_vt, this.cookies)
     }
