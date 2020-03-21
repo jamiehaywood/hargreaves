@@ -1,5 +1,5 @@
-import * as express from 'express'
 import { hl } from './hl'
+import * as express from 'express'
 import * as bodyParser from 'body-parser';
 
 const app = express()
@@ -13,9 +13,9 @@ app.post('/', async function (req, res) {
     let secureNumber = req.body.secureNumber
     let dateOfBirth = req.body.dateOfBirth
 
-    let instance = new hl(username, password, secureNumber, dateOfBirth)
-
-    res.send(await instance.getAccountsInfo())
+    let instance = new hl()
+    await instance.authenticate(username, password, dateOfBirth, secureNumber)
+    res.send(await instance.getInDepth())
 })
 
 
