@@ -1,5 +1,5 @@
 export interface IAccounts {
-    [key: string]: IAccount
+    [key: string]: IAccount | undefined
 }
 
 export interface IAccount {
