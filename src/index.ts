@@ -7,16 +7,22 @@ const port = 5000
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/', async function (req, res) {
+app.post('/', function (req, res) {
     let username = req.body.username
     let password = req.body.password
     let secureNumber = req.body.secureNumber
     let dateOfBirth = req.body.dateOfBirth
 
-    let instance = new hl(username, password, secureNumber, dateOfBirth)
+    let instance = new hl(username, password, secureNumber, dateOfBirth);
 
-    res.send(await instance.getAccountsInfo())
-})
+    let instanceData = instance.getAccountsInfo()
+        .then(() => {
+            res.send(instanceData).end();
+        })
+        .catch((err) => {
+            res.status(500).send(err).end();
+        });
+});
 
 
 app.listen(port, () => console.log(`HL API listening on port ${port}!`))
