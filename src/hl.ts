@@ -10,12 +10,29 @@ export class hl {
     private hl_vt: Promise<string>
     private cookies: request.CookieJar
 
-
+    
     private get specifiedSecureNumbers() {
         return getSpecifiedSecureNumbers(this.secureNumber, this.cookies)
     }
 
     constructor(username: string, password: string, secureNumber: string, dateOfBirth: string) {
+        
+        if (username == null || username == "") {
+            throw new Error("Username not provided")
+        }
+
+        if (password == null || password == "") {
+            throw new Error("Password not provided")
+        }
+
+        if (secureNumber == null || secureNumber == "") {
+            throw new Error("SecureNumber not provided")
+        }
+
+        if (dateOfBirth == null || dateOfBirth == "") {
+            throw new Error("DateOfBirth not provided")
+        }
+        
         this.username = username;
         this.password = password;
         this.secureNumber = secureNumber
