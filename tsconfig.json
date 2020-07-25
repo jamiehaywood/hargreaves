@@ -5,10 +5,11 @@
     "outDir": "./lib",
     "target": "es5",
     "sourceMap": true,
-    "lib": ["es2017", "dom"],
+    "lib": ["ESNext"],
     "strict": true,
     "noUnusedLocals": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "esModuleInterop": true
   },
   "include": ["src"],
   "exclude": [".git", "node_modules"]
