@@ -14,8 +14,8 @@ export const postSecureNumbers = async (
       "secure-number[1]": secureNumber[secureNo1],
       "secure-number[2]": secureNumber[secureNo2],
       "secure-number[3]": secureNumber[secureNo3],
-      submit: "Log+in"
+      submit: "Log+in",
     },
-    followRedirect: false
+    followRedirect: false,
   });
 };
