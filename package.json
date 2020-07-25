@@ -10,7 +10,7 @@
     "test:watch": "jest --watch"
   },
   "author": "",
-  "license": "ISC",
+  "license": "LGPLv3",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "got": "latest",
