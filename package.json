@@ -5,26 +5,26 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc -p .",
-    "start": "node ./lib/index.js"
+    "start": "npx ts-node src/main.ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/body-parser": "^1.17.1",
-    "@types/cheerio": "^0.22.15",
-    "@types/express": "^4.17.2",
-    "@types/got": "^9.6.9",
-    "@types/request": "^2.48.4",
-    "@types/tough-cookie": "^2.3.6",
-    "axios": "^0.19.2",
-    "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "got": "^10.6.0",
-    "multer": "^1.4.2",
-    "request": "^2.88.2",
-    "tough-cookie": "^3.0.1",
-    "typescript": "^3.6.4"
+    "got": "latest",
+    "tough-cookie": "latest"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.21",
+    "@types/got": "^9.6.11",
+    "@types/jest": "latest",
+    "@types/tough-cookie": "^4.0.0",
+    "dotenv": "latest",
+    "jest": "latest",
+    "ts-jest": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
   }
 }
