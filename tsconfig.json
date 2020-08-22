@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "ES6",
     "moduleResolution": "node",
+    "target": "ES2015",
     "outDir": "./lib",
-    "target": "es5",
     "sourceMap": true,
     "lib": ["ESNext"],
     "strict": true,
     "noUnusedLocals": true,
     "noImplicitReturns": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true
   },
   "include": ["src"],
-  "exclude": [".git", "node_modules"]
+  "exclude": ["src/__tests__/**",".git", "node_modules", "src/test.ts"]
 }
