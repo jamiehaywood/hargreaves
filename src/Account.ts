@@ -11,6 +11,7 @@ export class Account implements IAccount {
   totalGainPercentage = "";
   available = "";
   holdings = {} as IInvestments;
+
   public static getAccount = async (url?: string) => {
     if (!url) {
       throw new Error("There was an error parsing an account");
@@ -21,7 +22,13 @@ export class Account implements IAccount {
     account.stockValue = $("#stock_total_header").text().trim();
     account.cashValue = $("#cash_total_header").text().trim();
     account.totalValue = $("#account_total_header").text().trim();
-    account.totalGain = $("#gaingbp_total").text().trim();
+    account.totalGain = `£${$("#gaingbp_total").text().trim()}`;
+    account.totalGainPercentage = `${$("#gainpc_total").text().trim()}%`;
+    account.available = $(
+      '[summary="Available funds on this account"] tbody tr:nth-child(1) td.aRight'
+    )
+      .text()
+      .trim();
 
     let investmentRow = $("#holdings-table > tbody > tr").toArray();
     for (const investmenthtml of investmentRow) {
