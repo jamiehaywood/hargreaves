@@ -8,13 +8,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 10
+    - name: Read node version from .nvmrc
+      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+      id: nvm
+
+    - name: Setup node
       uses: actions/setup-node@v1
       with:
-        node-version: 10
+        node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-    - name: npm install & build
+    - name: Install dependencies
       run: |
         npm install
-        npm run build
+
+    - name: Run tests
+      run: |
+        npm test
+
+    - name: Run build
+      run: |
+        npm test
