@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Read node version from .nvmrc
-      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+    - name: Read .nvmrc
+      run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
       id: nvm
 
-    - name: Setup node
+    - name: Setup Node
       uses: actions/setup-node@v1
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
