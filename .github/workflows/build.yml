@@ -9,6 +9,9 @@ jobs:
 
     steps:
     - name: Read .nvmrc
+      run: echo ls
+
+    - name: Read .nvmrc
       run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
       id: nvm
 
@@ -18,13 +21,10 @@ jobs:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
     - name: Install dependencies
-      run: |
-        npm install
+      run: npm install
 
     - name: Run tests
-      run: |
-        npm test
+      run: npm test
 
     - name: Run build
-      run: |
-        npm test
+      run: npm test

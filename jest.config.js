@@ -9,15 +9,15 @@ module.exports = {
     "!**/node_modules/**",
     "!**/vendor/**",
     "!src/main.ts",
-    "!src/requestInstance.ts"
+    "!src/requestInstance.ts",
   ],
-  coveragePathIgnorePatterns: [],
-  coverageThreshold: {
-    global: {
-      functions: 80,
-      lines: 80,
-      statements: 80,
-    },
-  },
+  coveragePathIgnorePatterns: ["rollup.config.ts"],
+  // coverageThreshold: {
+  //   global: {
+  //     functions: 80,
+  //     lines: 80,
+  //     statements: 80,
+  //   },
+  // },
   coverageReporters: ["json", "lcov", "text", "clover"],
 };
