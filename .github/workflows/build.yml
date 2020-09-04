@@ -8,9 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Read .nvmrc
-      run: echo ls
-
+    - uses: actions/checkout@v1
+    
     - name: Read .nvmrc
       run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
       id: nvm
