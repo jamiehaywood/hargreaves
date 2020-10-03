@@ -1,16 +1,16 @@
-import request from "./requestInstance";
-import cheerio from "cheerio";
-import { IInvestmentDetails, ITransactions } from "./interfaces";
+import request from './requestInstance';
+import cheerio from 'cheerio';
+import { IInvestmentDetails, ITransactions } from './interfaces';
 
 export class Investment implements IInvestmentDetails {
   [key: string]: string | ITransactions;
-  sedol = "";
+  sedol = '';
   transactions = {} as ITransactions;
-  lastDividend = "";
-  nextDividend = "";
-  firstDeal = "";
-  lastDeal = "";
-  totalDeals = "";
+  lastDividend = '';
+  nextDividend = '';
+  firstDeal = '';
+  lastDeal = '';
+  totalDeals = '';
 
   static details = async (url?: string) => {
     if (!url) {
@@ -20,7 +20,7 @@ export class Investment implements IInvestmentDetails {
     let data = (await request.get(url)).body;
     let $ = cheerio.load(data);
     let holdingInfo = $('table[class="table-unstyled"]')
-      .find("strong")
+      .find('strong')
       .toArray()
       .map((x) => $(x).text().trim());
     if (holdingInfo.length === 0) {

@@ -1,9 +1,9 @@
-import got from "got";
-import { CookieJar } from "tough-cookie";
+import got from 'got';
+import { CookieJar } from 'tough-cookie';
 
 let cookieJar = new CookieJar();
 
-cookieJar.setCookieSync("jsCheck=yes; path=/", "https://hl.co.uk");
+cookieJar.setCookieSync('jsCheck=yes; path=/', 'https://hl.co.uk');
 
 const request = got.extend({
   cookieJar: cookieJar,

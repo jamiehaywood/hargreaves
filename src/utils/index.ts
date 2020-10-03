@@ -1,2 +1,2 @@
-export { parseSecureNumbers } from "./parseSecureNumbers";
-export { parseSecurityToken } from "./parseSecurityToken";
+export { parseSecureNumbers } from './parseSecureNumbers';
+export { parseSecurityToken } from './parseSecurityToken';

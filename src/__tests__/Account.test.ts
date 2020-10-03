@@ -1,3 +1,3 @@
-describe("some stuff", () => {
-  it("does some stuff", () => {});
+describe('some stuff', () => {
+  it('does some stuff', () => {});
 });

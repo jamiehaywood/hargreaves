@@ -1,17 +1,18 @@
 module.exports = {
-  preset: "ts-jest",
-  testEnvironment: "node",
-  testMatch: ["**/?(*.)+(spec|test).[jt]s?(x)"],
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
   testTimeout: 10000,
   collectCoverage: true,
   collectCoverageFrom: [
-    "**/*.{ts,tsx}",
-    "!**/node_modules/**",
-    "!**/vendor/**",
-    "!src/main.ts",
-    "!src/requestInstance.ts",
+    '**/*.{ts,tsx}',
+    '!**/node_modules/**',
+    '!**/vendor/**',
+    '!src/main.ts',
+    '!src/requestInstance.ts',
+    '!**/**/index.ts',
   ],
-  coveragePathIgnorePatterns: ["rollup.config.ts"],
+  coveragePathIgnorePatterns: ['rollup.config.ts'],
   // coverageThreshold: {
   //   global: {
   //     functions: 80,
@@ -19,5 +20,5 @@ module.exports = {
   //     statements: 80,
   //   },
   // },
-  coverageReporters: ["json", "lcov", "text", "clover"],
+  coverageReporters: ['json', 'lcov', 'text', 'clover'],
 };

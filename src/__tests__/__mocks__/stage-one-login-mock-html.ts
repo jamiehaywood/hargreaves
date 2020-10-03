@@ -1,4 +1,4 @@
-export const stageOneMockHtml= `"<!DOCTYPE html> <!-- [if IE 8]><html class="ie8" lang="en"><![endif]--> <!-- [if IE 9]><html class="ie9" lang="en"><![endif]--> <!-- [if gt IE 9]><!--> <html lang="en"> <!-- <![endif]--> <head> <meta charset="utf-8"> <script>window['adrum-start-time'] = new Date().getTime();</script><script src="//www.hl.co.uk/__zzz/720/9507107.js"></script>
+export const stageOneMockHtml = `"<!DOCTYPE html> <!-- [if IE 8]><html class="ie8" lang="en"><![endif]--> <!-- [if IE 9]><html class="ie9" lang="en"><![endif]--> <!-- [if gt IE 9]><!--> <html lang="en"> <!-- <![endif]--> <head> <meta charset="utf-8"> <script>window['adrum-start-time'] = new Date().getTime();</script><script src="//www.hl.co.uk/__zzz/720/9507107.js"></script>
  
 <title>Login to your Hargreaves Lansdown Account</title>
 <meta content="Log in to my accounts and dealing with Hargreaves Lansdown." name="Description"/>
@@ -2731,4 +2731,4 @@ window.onload = (typeof window.onload != 'function') ? loadChartbeat : function(
 })();
 if(typeof _satellite != 'undefined'){_satellite.pageBottom();}
 </script>	</body> </html>"
-`
+`;

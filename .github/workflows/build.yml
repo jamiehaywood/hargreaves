@@ -4,26 +4,25 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    
-    - name: Read .nvmrc
-      run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
-      id: nvm
+      - uses: actions/checkout@v1
 
-    - name: Setup Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      - name: Read .nvmrc
+        run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
+        id: nvm
 
-    - name: Install dependencies
-      run: npm install
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-    - name: Run tests
-      run: npm test
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run build
-      run: npm test
+      - name: Run tests
+        run: npm test
+
+      - name: Run build
+        run: npm test

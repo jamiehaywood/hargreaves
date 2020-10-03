@@ -1,8 +1,8 @@
-import request from "./requestInstance";
-import { parseSecurityToken, parseSecureNumbers } from "./utils";
-import { postUsernameDob, postSecureNumbers } from "./authentication";
-import { AccountsCollection } from "./AccountsCollection";
-import { clearCookieJar } from "./requestInstance";
+import request from './requestInstance';
+import { parseSecurityToken, parseSecureNumbers } from './utils';
+import { postUsernameDob, postSecureNumbers } from './authentication';
+import { AccountsCollection } from './AccountsCollection';
+import { clearCookieJar } from './requestInstance';
 // import { postSecureNumbers } from "./authentication/postSecureNumbers";
 export interface Credentials {
   username: string;
@@ -25,7 +25,7 @@ export default class HL {
     secureNumber,
   }: Credentials) {
     let stageOneHtml = (
-      await request.get("https://online.hl.co.uk/my-accounts/login-step-one")
+      await request.get('https://online.hl.co.uk/my-accounts/login-step-one')
     ).body;
 
     const hl_vt = parseSecurityToken(stageOneHtml);
@@ -33,7 +33,7 @@ export default class HL {
     await postUsernameDob(hl_vt, username, dateOfBirth);
 
     let stageTwoHtml = (
-      await request.get("https://online.hl.co.uk/my-accounts/login-step-two")
+      await request.get('https://online.hl.co.uk/my-accounts/login-step-two')
     ).body;
 
     const secureNumbers = parseSecureNumbers(stageTwoHtml);

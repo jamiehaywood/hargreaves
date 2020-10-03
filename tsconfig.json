@@ -4,14 +4,15 @@
     "moduleResolution": "node",
     "target": "ES2015",
     "outDir": "./lib",
+    "declaration": true,
+    "declarationDir": "./dist/types",
     "sourceMap": true,
     "lib": ["ESNext"],
     "strict": true,
     "noUnusedLocals": true,
     "noImplicitReturns": true,
-    "esModuleInterop": true,
-    "declaration": true
+    "esModuleInterop": true
   },
   "include": ["src"],
-  "exclude": ["src/__tests__/**",".git", "node_modules", "src/test.ts"]
+  "exclude": ["src/__tests__/**", ".git", "node_modules", "src/test.ts"]
 }
