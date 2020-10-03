@@ -11,6 +11,7 @@ module.exports = {
     '!src/main.ts',
     '!src/requestInstance.ts',
     '!**/**/index.ts',
+    '!dist/**',
   ],
   coveragePathIgnorePatterns: ['rollup.config.ts'],
   // coverageThreshold: {
