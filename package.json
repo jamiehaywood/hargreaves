@@ -1,15 +1,19 @@
 {
   "name": "hargreaves",
-  "version": "0.0.1",
-  "description": "",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "version": "0.0.3",
+  "description": "An unofficial API to programatically access your Hargreaves Lansdown account",
+  "main": "dist/hl.js",
+  "module": "dist/hl.es.js",
   "types": "dist/types",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c rollup.config.ts",
-    "test": "jest",
-    "test:watch": "jest --watch --max-workers=4"
+    "test": "jest --max-workers=4",
+    "test:watch": "jest --watch --max-workers=4",
+    "release": "standard-version"
   },
   "author": "",
   "license": "LGPLv3",
