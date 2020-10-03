@@ -1,20 +1,40 @@
 name: build
 
-on: [push]
+on: [push, ]
 
 jobs:
   build:
-
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 10
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10
+      - uses: actions/checkout@v2
 
-    - name: npm install & build
-      run: |
-        npm install
-        npm run build
+      - name: Read .nvmrc
+        run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
+        id: nvm
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run build
+        run: npm run build
+
+      - name: Run test
+        run: npm test
+  publish:
+    needs: build
+    if: github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, 'skip ci')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run release
+        run: npm run release
+      
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}

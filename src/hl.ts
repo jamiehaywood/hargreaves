@@ -1,37 +1,50 @@
-import { postUserAndDob, postSecureNumberAndPass, getSpecifiedSecureNumbers, getToken } from './authentication';
-import getAccountsInfo from './getAccountsInfo';
-import * as request from 'request'
+import request from './requestInstance';
+import { parseSecurityToken, parseSecureNumbers } from './utils';
+import { postUsernameDob, postSecureNumbers } from './authentication';
+import { AccountsCollection } from './AccountsCollection';
+import { clearCookieJar } from './requestInstance';
+// import { postSecureNumbers } from "./authentication/postSecureNumbers";
+export interface Credentials {
+  username: string;
+  password: string;
+  dateOfBirth: string;
+  secureNumber: string;
+}
+export default class HL {
+  /**
+   * @param {Object} credentials This is a credentials object used to authenticate the HL instance.
+   * @param {string} credentials.username Your Hargreaves Lansdown username
+   * @param {string} credentials.password Your Hargreaves Lansdown password
+   * @param {string} credentials.dateOfBirth The date of birth associated with your HL account
+   * @param {string} credentials.secureNumber The secure number associated with your HL account
+   */
+  async authenticate({
+    username,
+    password,
+    dateOfBirth,
+    secureNumber,
+  }: Credentials) {
+    let stageOneHtml = (
+      await request.get('https://online.hl.co.uk/my-accounts/login-step-one')
+    ).body;
 
-export class hl {
-    private username: string;
-    private password: string;
-    private secureNumber: string;
-    private dateOfBirth: string;
-    private hl_vt: Promise<string>
-    private cookies: request.CookieJar
+    const hl_vt = parseSecurityToken(stageOneHtml);
 
+    await postUsernameDob(hl_vt, username, dateOfBirth);
 
-    private get specifiedSecureNumbers() {
-        return getSpecifiedSecureNumbers(this.secureNumber, this.cookies)
-    }
+    let stageTwoHtml = (
+      await request.get('https://online.hl.co.uk/my-accounts/login-step-two')
+    ).body;
 
-    constructor(username: string, password: string, secureNumber: string, dateOfBirth: string) {
-        this.username = username;
-        this.password = password;
-        this.secureNumber = secureNumber
-        this.dateOfBirth = dateOfBirth
-        this.cookies = request.jar()
-        this.hl_vt = getToken(this.cookies)
-    }
+    const secureNumbers = parseSecureNumbers(stageTwoHtml);
+    await postSecureNumbers(hl_vt, password, secureNumbers, secureNumber);
+  }
 
-    private async auth() {
-        this.cookies.setCookie("jsCheck=yes; path=/", ".hl.co.uk");
-        await postUserAndDob(this.username, this.hl_vt, this.dateOfBirth, this.cookies)
-        await postSecureNumberAndPass(this.password, this.specifiedSecureNumbers, this.hl_vt, this.cookies)
-    }
+  async getInDepth() {
+    return AccountsCollection.get();
+  }
 
-    async getAccountsInfo() {
-        await this.auth()
-        return await getAccountsInfo(this.cookies)
-    }
+  async logout() {
+    await clearCookieJar();
+  }
 }
