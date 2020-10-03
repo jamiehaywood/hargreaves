@@ -1,10 +1,10 @@
 {
-  "name": "hl",
+  "name": "hargreaves",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c rollup.config.ts",
