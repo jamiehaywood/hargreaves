@@ -35,7 +35,6 @@ jobs:
       - name: Run release
         run: npm run release
       
-      - name: Push 
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
