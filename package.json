@@ -1,6 +1,6 @@
 {
   "name": "hl",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -9,8 +9,7 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c rollup.config.ts",
     "test": "jest",
-    "test:watch": "jest --watch"
-  },
+    "test:watch": "jest --watch",
   "author": "",
   "license": "LGPLv3",
   "dependencies": {
@@ -19,11 +18,14 @@
     "tough-cookie": "^4.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@types/cheerio": "^0.22.21",
     "@types/got": "^9.6.11",
     "@types/jest": "latest",
     "dotenv": "latest",
+    "husky": "^4.2.5",
     "jest": "latest",
     "rimraf": "^3.0.2",
     "rollup": "^2.26.4",
