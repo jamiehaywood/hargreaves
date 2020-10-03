@@ -13,7 +13,7 @@
     "build": "rollup -c rollup.config.ts",
     "test": "jest --max-workers=4",
     "test:watch": "jest --watch --max-workers=4",
-    "release": "standard-version --releaseCommitMessageFormat='chore(release): {{currentTag}} 🚀 [skip ci]",
+    "release": "standard-version --releaseCommitMessageFormat='chore(release): {{currentTag}} 🚀 [skip ci]'",
     "postrelease": "git push --follow-tags origin master && npm publish"
   },
   "author": "",
