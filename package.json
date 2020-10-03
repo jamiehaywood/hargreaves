@@ -9,7 +9,8 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c rollup.config.ts",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watch"
+  },
   "author": "",
   "license": "LGPLv3",
   "dependencies": {
