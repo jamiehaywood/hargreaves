@@ -4,7 +4,7 @@ import { postUsernameDob, postSecureNumbers } from "./authentication";
 import { AccountsCollection } from "./AccountsCollection";
 import { clearCookieJar } from "./requestInstance";
 // import { postSecureNumbers } from "./authentication/postSecureNumbers";
-interface Credentials {
+export interface Credentials {
   username: string;
   password: string;
   dateOfBirth: string;
