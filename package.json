@@ -37,6 +37,7 @@
     "rollup": "^2.26.4",
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-typescript2": "^0.27.2",
+    "standard-version": "^9.0.0",
     "ts-jest": "latest",
     "ts-node": "latest",
     "typescript": "latest"
