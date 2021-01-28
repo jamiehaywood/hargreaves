@@ -1,5 +1,5 @@
 {
-  "name": "hargreaves",
+  "name": "hargreaves-lansdown",
   "version": "0.0.2",
   "description": "An unofficial API to programatically access your Hargreaves Lansdown account",
   "main": "dist/index.js",
@@ -13,8 +13,8 @@
     "build": "rollup -c rollup.config.ts",
     "test": "jest --max-workers=4",
     "test:watch": "jest --watch --max-workers=4",
-    "release": "standard-version --releaseCommitMessageFormat='chore(release): {{currentTag}} 🚀 [skip ci]",
-    "postrelease": "git push --follow-tags origin master && npm publish"
+    "release": "standard-version --releaseCommitMessageFormat='chore(release): {{currentTag}} 🚀 [skip ci]'",
+    "postrelease": "git push --follow-tags origin master"
   },
   "author": "Jamie Haywood <https://github.com/jamiehaywood>",
   "license": "MIT",
@@ -35,8 +35,10 @@
     "jest": "latest",
     "rimraf": "^3.0.2",
     "rollup": "^2.26.4",
+    "rollup-plugin-dts": "^1.4.13",
     "rollup-plugin-terser": "^7.0.0",
     "rollup-plugin-typescript2": "^0.27.2",
+    "standard-version": "^9.0.0",
     "ts-jest": "latest",
     "ts-node": "latest",
     "typescript": "latest"
