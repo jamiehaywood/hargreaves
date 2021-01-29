@@ -16,6 +16,8 @@ export interface IInvestments {
 
 export interface IInvestment {
   [key: string]: any;
+  name: string;
+  ticker: string;
   stockType: string;
   stockInfo: string;
   stockLink?: string;
@@ -26,7 +28,6 @@ export interface IInvestment {
   gain: string;
   gainPercentage: string;
   details?: IInvestmentDetails;
-  ticker: string;
 }
 
 export interface IInvestmentDetails {
