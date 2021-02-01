@@ -29,7 +29,7 @@ jobs:
         run: npm test
   publish:
     needs: build
-    if: github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, 'skip ci')
+    if: github.ref == 'refs/heads/master' && ! contains(toJSON(github.event.commits.*.message), '[skip ci]')
     runs-on: ubuntu-latest
         
     steps:
