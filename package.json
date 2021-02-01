@@ -1,6 +1,6 @@
 {
   "name": "hargreaves-lansdown",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "description": "An unofficial API to programatically access your Hargreaves Lansdown account",
   "main": "dist/hl.js",
   "module": "dist/hl.es.js",
@@ -16,8 +16,8 @@
     "release": "standard-version --releaseCommitMessageFormat='chore(release): {{currentTag}} 🚀 [skip ci]'",
     "postrelease": "git push --follow-tags origin master"
   },
-  "author": "",
-  "license": "LGPLv3",
+  "author": "Jamie Haywood",
+  "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "got": "latest",
