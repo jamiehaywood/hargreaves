@@ -2,8 +2,6 @@
 
 > This is an unofficial API to programatically access your Hargreaves Lansdown account
 
-
-If you enjoy using this package, consider buying me a coffee here ➡️ <a href="https://www.buymeacoffee.com/jamiehaywood" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 25px !important;width: 100px" ></a> or in real life!
 ## Motivation
 
 I wanted to programmatically access my ISA and share accounts with Hargreaves Lansdown, and they do not currently offer a developer API. This project spins up an endpoint that allows you to access your accounts in under 3 seconds
@@ -141,3 +139,5 @@ If you are using `hargreaves-lansdown` in a continually running server environme
 ## Future Updates
 
 I am currently working on being able to query the accounts in more depth, right down to the individual holdings, and be able to programmatically buy and sell holdings.
+
+If you enjoy using this package, consider buying me a coffee here ➡️ <a href="https://www.buymeacoffee.com/jamiehaywood" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 12px !important;width: 60px" ></a> or in real life!
