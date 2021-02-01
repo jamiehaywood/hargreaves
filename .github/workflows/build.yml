@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    if: "!contains(toJSON(github.event.head_commit.message), '[skip ci]'"
+    if: "!contains(toJSON(github.event.head_commit.message), '[skip ci]')"
     runs-on: ubuntu-latest
 
     steps:
