@@ -44,6 +44,7 @@ export class Account implements IAccount {
           .toArray()
           .map((element) => $(element).text().trim().replace(/\n/g, ''));
         let investment: IInvestment = {
+          name: investmentName,
           ticker: array[0],
           unitsHeld: array[2],
           cost: array[5],
@@ -56,7 +57,7 @@ export class Account implements IAccount {
           stockUrl: investmentUrl,
           details: await Investment.details(investmentUrl),
         };
-        account['holdings'][investmentName] = investment;
+        account['holdings'][investment.ticker] = investment;
       }
     }
     return account;
