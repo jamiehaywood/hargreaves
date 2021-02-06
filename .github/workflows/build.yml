@@ -1,10 +1,12 @@
 name: build
 
-on: [push]
+on:
+  push:
+    branches: [master]
 
 jobs:
   build:
-    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    if: "!contains(toJSON(github.event.head_commit.message), '[skip ci]')"
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
 
       - name: Install dependencies
         run: npm install
@@ -29,9 +31,9 @@ jobs:
         run: npm test
   publish:
     needs: build
-    if: github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, 'skip ci')
+    if: "!contains(toJSON(github.event.head_commit.message), '[skip ci]') && github.ref == 'refs/heads/master'"
     runs-on: ubuntu-latest
-        
+
     steps:
       - uses: actions/checkout@v2
 
@@ -42,7 +44,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
 
       - name: Install dependencies
         run: npm install
@@ -57,7 +59,7 @@ jobs:
 
       - name: Run release
         run: npm run release
-      
+
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}

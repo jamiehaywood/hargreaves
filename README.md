@@ -1,12 +1,12 @@
-# <span style="color:#0F1A48"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Hargreaves_Lansdown_logo.svg/1280px-Hargreaves_Lansdown_logo.svg.png" height="22" /> UNOFFICIAL API ![](https://github.com/jamiehaywood/hl/workflows/build/badge.svg)</span>
+# <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Hargreaves_Lansdown_logo.svg/1280px-Hargreaves_Lansdown_logo.svg.png" height="22" /> UNOFFICIAL API ![](https://github.com/jamiehaywood/hl/workflows/build/badge.svg) ![](https://img.shields.io/npm/v/hargreaves-lansdown)
 
-### <span style="color:#0F1A48">This is an unofficial API to programatically access your Hargreaves Lansdown account.</span>
+> This is an unofficial API to programatically access your Hargreaves Lansdown account
 
-## <div style="color:#0F1A48">Motivation</div>
+## Motivation
 
-<div style="color:#0F1A48"> I wanted to programmatically access my ISA and share accounts with Hargreaves Lansdown, and they do not currently offer a developer API. This project spins up an endpoint that allows you to access your accounts in under 3 seconds</div>
+I wanted to programmatically access my ISA and share accounts with Hargreaves Lansdown, and they do not currently offer a developer API. This project spins up an endpoint that allows you to access your accounts in under 3 seconds
 
-## <div style="color:#0F1A48"> Install </div>
+## Install
 
 ```
 npm install hargreaves-lansdown
@@ -16,7 +16,7 @@ npm install hargreaves-lansdown
 yarn add hargreaves-lansdown
 ```
 
-## <div style="color:#0F1A48"> Usage </div>
+## Usage
 
 ```
 import HL from 'hargreaves-lansdown'
@@ -39,8 +39,29 @@ import HL from 'hargreaves-lansdown'
 })();
 ```
 
-## <div style="color:#0F1A48"> Notes </div>
+## Things to note
+
+This package is versioned according to SemVer. However, it is still in active development and ⚠️ **versions < 1.0.0 are unstable and may potentially have breaking changes in every release.** ⚠️ With this in mind, if you install this from NPM, [**make sure you pin your version of `hargreaves-lansdown`**](https://docs.renovatebot.com/dependency-pinning/#what-is-dependency-pinning:~:text=If%20instead%20you%20%22pin%22%20your%20dependencies,foobar%20version%201.1.0%20and%20no%20other%22.)
+
+If building & consuming from source, **make sure you use a separate fork.**
+
+## Contributing
+I am open to suggestions / contributions for this package. It is very much in active development & I will be maintaining it for the foreseeable future. If you're not confident writing TypeScript / JavaScript, please don't let that hold you back- raise an issue with features you would like to see & I will endeavour to build & release them. 
+
+### Commits
+
+The commit styling adheres to the **[Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/).** Please follow it!
+As well as being visually satisfying in the repo, it also serves a purpose for versioning releases correctly.
+When code is merged to the `master` branch, the commits in that pull request are analysed to determine whether the package version should be incremented by a major, minor or patch version.
+
+### Code style & standards
+
+This repo uses Prettier, pretty standard nowadays (pardon the pun..!). ESLint is on the roadmap of being added.
+
+## Notes
+
 ### `getInDepth()`
+
 This method returns an object with the following interface:
 
 ```ts
@@ -115,10 +136,8 @@ interface ITransaction {
 
 If you are using `hargreaves-lansdown` in a continually running server environment, make sure you call `logout()` at the end of calling `getInDepth()`. This clears session cookies which ensures there are no weird authentication side-effects.
 
-## <div style="color:#0F1A48"> Future Updates </div>
+## Future Updates
 
 I am currently working on being able to query the accounts in more depth, right down to the individual holdings, and be able to programmatically buy and sell holdings.
 
-## <div style="color:#0F1A48"> Contributing </div>
-
-Please feel free to fork, contribute, rewrite etc.
+If you enjoy using this package, consider buying me a coffee here ➡️ <a href="https://www.buymeacoffee.com/jamiehaywood" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 12px !important;width: 60px" ></a> or in real life!

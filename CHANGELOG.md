@@ -6,11 +6,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.1](https://github.com/jamiehaywood/hl/compare/v0.0.3...v0.0.1) (2020-10-03)
 
-### 0.0.3 (2020-10-03)
-
-### 0.0.3 (2020-10-03)
-
-
 ### Features
 
 * add index exports for auth & utils ([34915ad](https://github.com/jamiehaywood/hl/commit/34915ade9f0892e55b2c757dc37c10320d29412b))
