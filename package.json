@@ -1,6 +1,6 @@
 {
   "name": "hargreaves-lansdown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An unofficial API to programatically access your Hargreaves Lansdown account",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
