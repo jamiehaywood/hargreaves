@@ -3,7 +3,7 @@ import { parseSecurityToken, parseSecureNumbers } from './utils';
 import { postUsernameDob, postSecureNumbers } from './authentication';
 import { AccountsCollection } from './AccountsCollection';
 import { clearCookieJar } from './requestInstance';
-// import { postSecureNumbers } from "./authentication/postSecureNumbers";
+
 export interface Credentials {
   username: string;
   password: string;

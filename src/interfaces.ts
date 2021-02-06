@@ -27,6 +27,7 @@ export interface IInvestment {
   gainPercentage: string;
   details?: IInvestmentDetails;
   ticker: string;
+  name: string;
 }
 
 export interface IInvestmentDetails {
