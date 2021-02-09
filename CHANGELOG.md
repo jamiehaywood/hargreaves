@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/jamiehaywood/hl/compare/v0.0.2...v0.0.4) (2021-02-09)
+
+
+### Features
+
+* add license ([e23b059](https://github.com/jamiehaywood/hl/commit/e23b05997d578faeb3adad31c80c5680bfedd50f))
+
 ### 0.0.3 (2021-02-09)
 
 ### 0.0.2 (2020-10-06)
