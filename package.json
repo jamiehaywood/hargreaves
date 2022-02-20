@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "got": "latest",
+    "got": "^11.0.0",
     "tough-cookie": "^4.0.0"
   },
   "devDependencies": {
