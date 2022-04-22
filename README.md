@@ -1,10 +1,12 @@
 # <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Hargreaves_Lansdown_logo.svg/1280px-Hargreaves_Lansdown_logo.svg.png" height="22" /> UNOFFICIAL API ![](https://github.com/jamiehaywood/hl/workflows/build/badge.svg) ![](https://img.shields.io/npm/v/hargreaves-lansdown)
 
-> This is an unofficial API to programatically access your Hargreaves Lansdown account
+_This is an unofficial API to programatically access your Hargreaves Lansdown account_
 
-## Motivation
+## ⚠️ This project is in maintenance mode ⚠️
+I will no longer be adding features / accepting PRs as I have moved my ISA and share holdings to [Freetrade](https://freetrade.io/). 
+Hargreaves Lansdown's trading and ongoing fees are astronomical, and do not reflect "good value" for me. 
 
-I wanted to programmatically access my ISA and share accounts with Hargreaves Lansdown, and they do not currently offer a developer API. This project spins up an endpoint that allows you to access your accounts in under 3 seconds
+If you would like to join Freetrade and get a free share worth between £3 and £200 don't hesitate to [use my signup link](https://magic.freetrade.io/join/jamie/8d008b5f)
 
 ## Install
 
