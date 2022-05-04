@@ -1,6 +1,6 @@
 import request from './requestInstance';
 import cheerio from 'cheerio';
-import { IInvestmentDetails, ITransactions } from './interfaces';
+import { IInvestmentDetails, ITransaction, ITransactions } from './interfaces';
 
 export class Investment implements IInvestmentDetails {
   [key: string]: string | ITransactions;
@@ -32,10 +32,27 @@ export class Investment implements IInvestmentDetails {
     investmentDetails.nextDividend = holdingInfo[5];
     investmentDetails.lastDividend = holdingInfo[3];
     investmentDetails.sedol = url.match(/[^\/]+$/)![0];
-    // // HoldingSummary
-    // $('table[class="default-table"')
-    //     .find('tr > td:nth-child(2)')
-    //     .toArray()
+
+    let transactionRow = $("[class='hl-table security-movements-transactions-table'] > tbody > tr").toArray();
+
+    for (const transactionhtml of transactionRow) {
+      if (url) {
+        let transactionArray = $(transactionhtml)
+        .find('td')
+        .toArray()
+        .map((element) => $(element).text().trim().replace(/\n/g, ''));
+        let transaction: ITransaction = {
+          date: transactionArray[0],
+          type: transactionArray[1],
+          reference: transactionArray[2],
+          unitCost: Number(transactionArray[3]),
+          quantity: Number(transactionArray[4]),
+          cost: Number(transactionArray[5])
+        };
+        investmentDetails['transactions'][transaction.reference] = transaction;
+      }
+    }
+
     return investmentDetails;
   };
 }
